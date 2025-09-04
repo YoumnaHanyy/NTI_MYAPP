@@ -20,5 +20,16 @@ class UserSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+        DB::table('users')->insert([
+    'name' => 'Admin',
+    'email' => 'admin@example.com',
+    'email_verified_at' => now(),
+    'password' => Hash::make('admin'), // password = admin
+    'remember_token' => Str::random(10),
+    'role' => 'admin', // Add a role column in users table
+    'created_at' => now(),
+    'updated_at' => now(),
+]);
+
     }
 }
